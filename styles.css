@@ -1,0 +1,18 @@
+.spaceship {
+    border-radius: 50%; /* Make it circular */
+    background: linear-gradient(135deg, #ffcc00, #ff9900); /* Gradient color */
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5); /* Glow effect */
+}
+
+.enemy {
+    border-radius: 10%; /* Slightly rounded corners */
+    background: linear-gradient(135deg, #ff0000, #cc0000); /* Gradient color */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Glow effect */
+}
+
+.power-up {
+    border-radius: 50%; /* Make it circular */
+    background: linear-gradient(135deg, #00ff00, #009900); /* Gradient color */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Glow effect */
+}
+
