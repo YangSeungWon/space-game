@@ -326,6 +326,8 @@ function checkCollisions() {
                 score += 10; // 점수 증가
             } else {
                 gameOver = true;
+                powerUpActive = false; // Deactivate double bullets
+                activePowerUps = []; // Clear active power-ups
             }
         }
     });
@@ -377,19 +379,35 @@ function checkLevelUp() {
     }
 }
 
-function resetGame() {
-    spaceship.x = canvas.width / 2 - 25;
-    spaceship.dx = 0;
+function initializeGameState() {
+    spaceship = {
+        x: canvas.width / 2 - 25,
+        y: canvas.height - 60,
+        width: 50,
+        height: 50,
+        dx: 0,
+        maxSpeed: 10,
+        acceleration: 0.3,
+        isInvincible: false
+    };
+
     bullets = [];
     enemies = [];
     powerUps = [];
+    activePowerUps = [];
     score = 0;
     level = 1;
     lives = 3;
     gameOver = false;
     enemyInterval = 1000;
-    activePowerUps = []; // Clear active power-ups
-    powerUpMessage = ''; // Clear power-up message
+    powerUpActive = false;
+    powerUpMessage = '';
+}
+
+initializeGameState(); // Initial setup
+
+function resetGame() {
+    initializeGameState(); // Reset game state
 }
 
 document.addEventListener('keydown', (e) => {
